@@ -53,51 +53,83 @@ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080";
 const SummaryApi = {
     // Auth endpoints
     signIn: {
-        url: `${BASE_URL}/signin`,
+        url: `${BASE_URL}/api/signin`,
         method: 'POST'
     },
     signUp: {
-        url: `${BASE_URL}/signup`,
+        url: `${BASE_URL}/api/signup`,
         method: 'POST'
     },
     logout: {
-        url: `${BASE_URL}/logout`,
-        method: 'POST'
+        url: `${BASE_URL}/api/userlogout`,
+        method: 'GET'
     },
     // User endpoints
     current_user: {
-        url: `${BASE_URL}/user-details`,
+        url: `${BASE_URL}/api/user-details`,
         method: 'GET'
     },
     updateUser: {
-        url: `${BASE_URL}/update-user`,
-        method: 'PUT'
+        url: `${BASE_URL}/api/update-user`,
+        method: 'POST'
     },
     allUsers: {
-        url: `${BASE_URL}/users`,
+        url: `${BASE_URL}/api/all-user`,
         method: 'GET'
     },
     // Product endpoints
     allProduct: {
-        url: `${BASE_URL}/products`,
+        url: `${BASE_URL}/api/products`,
         method: 'GET'
+    },
+    uploadProduct: {
+        url: `${BASE_URL}/api/upload-product`,
+        method: 'POST'
+    },
+    updateProduct: {
+        url: `${BASE_URL}/api/update-product`,
+        method: 'PUT'
     },
     categoryProduct: {
         url: `${BASE_URL}/api/category-product`,
         method: 'GET'
     },
     categoryWiseProduct: {
-        url: `${BASE_URL}/category-wise/product`,
+        url: `${BASE_URL}/api/category-wise/product`,
+        method: 'POST'
+    },
+    productDetails: {
+        url: `${BASE_URL}/api/product-details`,
         method: 'POST'
     },
     searchProduct: {
-        url: `${BASE_URL}/search/product`,
+        url: `${BASE_URL}/api/search/product`,
         method: 'GET'
     },
+    filterProduct: {
+        url: `${BASE_URL}/api/filter-product`,
+        method: 'POST'
+    },
     // Cart endpoints
+    addToCart: {
+        url: `${BASE_URL}/api/add-to-cart`,
+        method: 'POST'
+    },
     addToCartProductCount: {
-        url: `${BASE_URL}/cart/count`,
+        url: `${BASE_URL}/api/cart/count`,
         method: 'GET'
+    },
+    addToCartViewProduct: {
+        url: `${BASE_URL}/api/cart/view`,
+        method: 'GET'
+    },
+    updateCartProduct: {
+        url: `${BASE_URL}/api/cart/update`,
+        method: 'POST'
+    },
+    deleteCartProduct: {
+        url: `${BASE_URL}/api/cart/delete`,
+        method: 'POST'
     }
 };
 

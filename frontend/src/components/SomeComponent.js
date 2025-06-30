@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchUserDetails, fetchUserAddToCart, fetchCategoryProduct, fetchCategoryWiseProduct } from '../utils/api';
+import { useEffect, useState } from 'react';
+import { fetchUserDetails } from '../utils/api';
 
 /**
  * SomeComponent is a functional React component that fetches and displays user details.
@@ -36,7 +36,11 @@ const SomeComponent = () => {
   return (
     <div>
       {error && <p>Error: {error}</p>}
-      {/* Render user details */}
+      {userDetails ? (
+        <pre>{JSON.stringify(userDetails, null, 2)}</pre>
+      ) : (
+        <p>Loading user details...</p>
+      )}
     </div>
   );
 };

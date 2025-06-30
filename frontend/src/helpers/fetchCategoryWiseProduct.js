@@ -1,4 +1,4 @@
-const { default: SummaryApi } = require("../common")
+import SummaryApi from "../common"
 
 /**
  * Fetches products based on the given category.
@@ -10,19 +10,28 @@ const { default: SummaryApi } = require("../common")
  * @throws {Error} If the fetch operation fails.
  */
 const fetchCategoryWiseProduct = async(category)=>{
-    const response = await fetch(SummaryApi.categoryWiseProduct.url,{
-        method : SummaryApi.categoryWiseProduct.method,
-        headers : {
-            "content-type" : "application/json"
-        },
-        body : JSON.stringify({
-            category : category
+    try {
+        console.log('Fetching category wise products for:', category);
+        console.log('API config:', SummaryApi.categoryWiseProduct);
+        
+        const response = await fetch(SummaryApi.categoryWiseProduct.url,{
+            method : SummaryApi.categoryWiseProduct.method,
+            headers : {
+                "content-type" : "application/json"
+            },
+            body : JSON.stringify({
+                category : category
+            })
         })
-    })
 
-    const dataResponse = await response.json()
+        const dataResponse = await response.json()
+        console.log('Category wise product response:', dataResponse);
 
-    return dataResponse
+        return dataResponse
+    } catch (error) {
+        console.error('Error fetching category wise products:', error);
+        throw error;
+    }
 }
 
 export default fetchCategoryWiseProduct

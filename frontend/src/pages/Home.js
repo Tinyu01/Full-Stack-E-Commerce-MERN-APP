@@ -5,6 +5,10 @@ import HorizontalCardProduct from '../components/HorizontalCardProduct' // Impor
 import VerticalCardProduct from '../components/VerticalCardProduct' // Importing VerticalCardProduct component
 
 const Home = () => {
+  // The components below only display products from the database.
+  // To add these products to your database, you need to insert them on the backend (e.g., via an admin panel, seed script, or API).
+  // This frontend code does NOT add products to the database.
+
   return (
     <div>
       {/* Rendering CategoryList component */}
@@ -24,8 +28,8 @@ const Home = () => {
       <VerticalCardProduct category={"camera"} heading={"Camera & Photography"}/>
       <VerticalCardProduct category={"earphones"} heading={"Wired Earphones"}/>
       <VerticalCardProduct category={"speakers"} heading={"Bluetooth Speakers"}/>
-      <VerticalCardProduct category={"refrigerator"} heading={"Refrigerator"}/>
-      <VerticalCardProduct category={"trimmers"} heading={"Trimmers"}/>
+      <VerticalCardProduct category={"airpodes"} heading={"More Airpodes"}/>
+      <VerticalCardProduct category={"watches"} heading={"More Watches"}/>
     </div>
   )
 }
